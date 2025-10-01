@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import type { Project } from "@/lib/types";
 
 type ProjectShowcaseProps = {
   projects: Project[];
 };
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -17,9 +17,9 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0 },
 };
 
 export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
@@ -52,6 +52,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           <motion.article
             key={project.title}
             variants={item}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="group relative flex flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)]/80 bg-[color:var(--color-background)/.65]"
           >
             <div className="relative h-48 overflow-hidden">

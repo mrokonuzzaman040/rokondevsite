@@ -1,19 +1,6 @@
 "use server";
 
-export type ContactFormState = {
-  status: "idle" | "success" | "error";
-  message: string;
-  errors?: {
-    name?: string;
-    email?: string;
-    message?: string;
-  };
-};
-
-export const initialContactFormState: ContactFormState = {
-  status: "idle",
-  message: "",
-};
+import type { ContactFormState } from "@/lib/types";
 
 export async function submitContact(
   _prevState: ContactFormState,

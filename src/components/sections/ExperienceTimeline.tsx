@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import type { Experience } from "@/lib/types";
 
 type ExperienceTimelineProps = {
@@ -8,13 +8,12 @@ type ExperienceTimelineProps = {
   variant?: "compact" | "full";
 };
 
-const variants = {
+const variants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (index: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: index * 0.08, duration: 0.6, ease: "easeOut" },
-  }),
+  },
 };
 
 export function ExperienceTimeline({ experiences, variant = "full" }: ExperienceTimelineProps) {
@@ -36,11 +35,11 @@ export function ExperienceTimeline({ experiences, variant = "full" }: Experience
           {experiences.map((experience, index) => (
             <motion.article
               key={`${experience.company}-${experience.role}`}
-              custom={index}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
               variants={variants}
+              transition={{ delay: index * 0.08, duration: 0.6, ease: "easeOut" }}
               className="relative rounded-2xl border border-[color:var(--color-border)]/80 bg-[color:var(--color-background)/.7] p-6 backdrop-blur"
             >
               <span className="absolute -left-[14px] top-6 h-3 w-3 rounded-full bg-[color:var(--color-accent)] shadow-[0_0_12px_rgba(var(--accent)/0.8)]" />

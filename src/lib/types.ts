@@ -87,6 +87,21 @@ export type WhatsAppConfig = {
   message: string;
 };
 
+export type ContactFormState = {
+  status: "idle" | "success" | "error";
+  message: string;
+  errors?: {
+    name?: string;
+    email?: string;
+    message?: string;
+  };
+};
+
+export const initialContactFormState: ContactFormState = {
+  status: "idle",
+  message: "",
+};
+
 export type PortfolioData = {
   hero: HeroContent;
   projects: Project[];

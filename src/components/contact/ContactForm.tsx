@@ -2,7 +2,8 @@
 
 import { useFormState, useFormStatus } from "react-dom";
 import { motion } from "framer-motion";
-import { initialContactFormState, submitContact } from "@/app/contact/actions";
+import { initialContactFormState } from "@/lib/types";
+import { submitContact } from "@/app/contact/actions";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
