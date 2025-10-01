@@ -137,15 +137,15 @@ type Deployment = {
 };
 
 export async function deployEdge({ id, regions, onProgress }: Deployment) {
-  onProgress(`[launch] starting ${id}`);
+  onProgress('[launch] starting ' + id);
 
   for (const region of regions) {
-    onProgress(`[package] shipping to ${region}`);
+    onProgress('[package] shipping to ' + region);
     await warmRegion(region);
-    onProgress(`[ready] warmed ${region}`);
+    onProgress('[ready] warmed ' + region);
   }
 
-  onProgress(`[live] flipped traffic for ${id}`);
+  onProgress('[live] flipped traffic for ' + id);
 }
 
 async function warmRegion(region: Region) {
