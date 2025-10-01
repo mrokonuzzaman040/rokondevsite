@@ -26,7 +26,7 @@ export function Footer() {
         </div>
       </div>
       <p className="mt-4 text-xs text-muted/70">
-        © {new Date().getFullYear()} Rokon. Engineering products with empathy and immersive storytelling.
+        Copyright {new Date().getFullYear()} Rokon. Engineering products with empathy and immersive storytelling.
       </p>
     </footer>
   );

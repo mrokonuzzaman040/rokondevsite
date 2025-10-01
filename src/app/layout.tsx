@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Rokon - Software Engineer Portfolio",
-    template: "%s · Rokon",
+    template: "%s | Rokon",
   },
   description:
     "Portfolio for Rokon, a software engineer crafting immersive web experiences, platform tooling, and animation-driven interfaces.",

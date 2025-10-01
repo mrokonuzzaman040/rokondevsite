@@ -45,9 +45,9 @@ export function ExperienceTimeline({ variant = "full" }: ExperienceTimelineProps
               <span className="absolute -left-[14px] top-6 h-3 w-3 rounded-full bg-[color:var(--color-accent)] shadow-[0_0_12px_rgba(var(--accent)/0.8)]" />
               <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm text-muted">
                 <div className="text-xs uppercase tracking-[0.35em] text-muted">
-                  {experience.start} — {experience.end}
+                  {experience.start} - {experience.end}
                 </div>
-                <div className="text-xs text-muted">{experience.technologies.join(" · ")}</div>
+                <div className="text-xs text-muted">{experience.technologies.join(" | ")}</div>
               </div>
               <h3 className="mt-4 text-2xl font-semibold text-white">{experience.role}</h3>
               <p className="text-sm text-muted">{experience.company}</p>

@@ -46,7 +46,7 @@ export function ProjectGallery() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Live experience ->
+                    Live experience {"->"}
                   </Link>
                 )}
                 {project.repoUrl && (

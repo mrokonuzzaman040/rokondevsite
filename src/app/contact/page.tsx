@@ -11,7 +11,7 @@ export default function ContactPage() {
       <header className="max-w-3xl">
         <p className="text-xs uppercase tracking-[0.4em] text-muted">Contact</p>
         <h1 className="mt-4 text-4xl font-semibold text-white md:text-5xl">
-          Let's engineer experiences that feel otherworldly.
+          Let&apos;s engineer experiences that feel otherworldly.
         </h1>
         <p className="mt-4 text-sm text-muted">
           Open to partnering with product teams, founders, and studios that value motion-rich storytelling, durability,
