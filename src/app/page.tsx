@@ -1,16 +1,19 @@
+import Link from "next/link";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectShowcase } from "@/components/sections/ProjectShowcase";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { CodeShowcase } from "@/components/sections/CodeShowcase";
-import Link from "next/link";
+import { getPortfolioData } from "@/lib/get-portfolio-data";
 
-export default function Home() {
+export default async function Home() {
+  const { hero, projects, experiences, codeSamples } = await getPortfolioData();
+
   return (
     <div className="space-y-32">
-      <Hero />
-      <ProjectShowcase />
-      <ExperienceTimeline variant="compact" />
-      <CodeShowcase />
+      <Hero content={hero} />
+      <ProjectShowcase projects={projects} />
+      <ExperienceTimeline experiences={experiences} variant="compact" />
+      <CodeShowcase codeSamples={codeSamples} />
 
       <section className="relative overflow-hidden rounded-3xl border border-[color:var(--color-accent)/.2] bg-[color:var(--color-background)/.7] p-10">
         <div className="absolute -left-10 top-0 h-32 w-32 rounded-full bg-[color:var(--color-accent)/.2] blur-3xl" />
@@ -18,8 +21,8 @@ export default function Home() {
         <div className="relative">
           <h2 className="text-3xl font-semibold text-white">Let&apos;s craft the future of your product.</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted">
-            I collaborate with teams to ship platforms, design systems, and cinematic experiences that feel effortless.
-            If you&apos;re building something that deserves a new dimension, let&apos;s chat.
+            I collaborate with teams to ship platforms, design systems, and cinematic experiences that feel effortless. If
+            you&apos;re building something that deserves a new dimension, let&apos;s chat.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link

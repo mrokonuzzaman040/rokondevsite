@@ -1,0 +1,42 @@
+<svg width="960" height="600" viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgSpectral" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B061C" />
+      <stop offset="1" stop-color="#25124A" />
+    </linearGradient>
+    <linearGradient id="gridLine" x1="200" y1="120" x2="760" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2DD4BF" />
+      <stop offset="0.5" stop-color="#22D3EE" />
+      <stop offset="1" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="panel" x1="120" y1="84" x2="840" y2="516" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120826" />
+      <stop offset="1" stop-color="#2B1152" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="48" fill="url(#bgSpectral)" />
+  <rect x="80" y="72" width="800" height="456" rx="32" fill="url(#panel)" opacity="0.92" />
+  <g opacity="0.18">
+    <path d="M176 156H784" stroke="white" stroke-width="1" />
+    <path d="M176 220H784" stroke="white" stroke-width="1" />
+    <path d="M176 284H784" stroke="white" stroke-width="1" />
+    <path d="M176 348H784" stroke="white" stroke-width="1" />
+    <path d="M176 412H784" stroke="white" stroke-width="1" />
+    <path d="M240 124V444" stroke="white" stroke-width="1" />
+    <path d="M304 124V444" stroke="white" stroke-width="1" />
+    <path d="M368 124V444" stroke="white" stroke-width="1" />
+    <path d="M432 124V444" stroke="white" stroke-width="1" />
+    <path d="M496 124V444" stroke="white" stroke-width="1" />
+    <path d="M560 124V444" stroke="white" stroke-width="1" />
+    <path d="M624 124V444" stroke="white" stroke-width="1" />
+    <path d="M688 124V444" stroke="white" stroke-width="1" />
+    <path d="M752 124V444" stroke="white" stroke-width="1" />
+  </g>
+  <path d="M220 364C292 296 336 240 412 244C488 248 488 320 562 320C636 320 656 240 732 236C772 234 804 254 828 284" stroke="url(#gridLine)" stroke-width="10" stroke-linecap="round" opacity="0.85" />
+  <circle cx="412" cy="244" r="18" fill="#34D399" />
+  <circle cx="562" cy="320" r="18" fill="#FBBF24" />
+  <circle cx="732" cy="236" r="18" fill="#F472B6" />
+  <rect x="180" y="440" width="600" height="64" rx="20" fill="#0F0A22" opacity="0.8" />
+  <rect x="208" y="460" width="360" height="16" rx="8" fill="#22D3EE" opacity="0.85" />
+  <rect x="208" y="482" width="192" height="10" rx="5" fill="#A855F7" opacity="0.7" />
+</svg>

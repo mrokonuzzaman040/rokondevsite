@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experiences } from "@/lib/portfolio-data";
+import type { Experience } from "@/lib/types";
 
 type ExperienceTimelineProps = {
+  experiences: Experience[];
   variant?: "compact" | "full";
 };
 
@@ -16,7 +17,7 @@ const variants = {
   }),
 };
 
-export function ExperienceTimeline({ variant = "full" }: ExperienceTimelineProps) {
+export function ExperienceTimeline({ experiences, variant = "full" }: ExperienceTimelineProps) {
   return (
     <section className={variant === "compact" ? "mt-24" : "mt-12"}>
       <header className="flex flex-wrap items-end justify-between gap-4">

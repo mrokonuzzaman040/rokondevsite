@@ -1,32 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { ContactOption } from "@/lib/types";
 
-const contacts = [
-  {
-    title: "Book a collaboration call",
-    detail: "Perfect for product teams looking to craft immersive platform experiences.",
-    href: "https://cal.com/rokon/intro",
-    cta: "Schedule 30 minutes",
-  },
-  {
-    title: "Say hello",
-    detail: "Share context, requirements, or just an idea. I respond within a day.",
-    href: "mailto:hello@rokon.dev",
-    cta: "Compose email",
-  },
-  {
-    title: "Follow the build log",
-    detail: "Snapshots of prototypes, motion explorations, and platform experiments.",
-    href: "https://twitter.com/rokondev",
-    cta: "Open build log",
-  },
-];
+type ContactOptionsProps = {
+  options: ContactOption[];
+};
 
-export function ContactOptions() {
+export function ContactOptions({ options }: ContactOptionsProps) {
   return (
     <div className="mt-12 grid gap-6 md:grid-cols-3">
-      {contacts.map((contact, index) => (
+      {options.map((contact, index) => (
         <motion.a
           key={contact.href}
           href={contact.href}

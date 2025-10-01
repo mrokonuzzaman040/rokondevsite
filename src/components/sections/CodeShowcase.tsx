@@ -2,9 +2,19 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { codeSamples } from "@/lib/portfolio-data";
+import type { CodeSample } from "@/lib/types";
 
-export function CodeShowcase() {
+type CodeShowcaseProps = {
+  codeSamples: CodeSample[];
+};
+
+export function CodeShowcase({ codeSamples }: CodeShowcaseProps) {
+  if (!codeSamples.length) {
+    return null;
+  }
+
+  const [feature, ...rest] = codeSamples;
+
   return (
     <section className="mt-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
@@ -34,17 +44,17 @@ export function CodeShowcase() {
           <div className="flex items-center justify-between border-b border-[color:var(--color-border)]/80 px-6 py-4">
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
               <span className="h-2 w-2 rounded-full bg-[color:var(--color-accent)]" />
-              motion.ts
+              {`feature.${feature.language}`}
             </div>
             <span className="text-xs text-muted">Composed with TypeScript</span>
           </div>
           <pre className="relative overflow-x-auto bg-gradient-to-br from-[color:var(--color-background)] via-[color:var(--color-background)/.6] to-[color:var(--color-accent)/.12] p-6 font-mono text-[13px] leading-relaxed text-muted">
-            <code>{codeSamples[0].code}</code>
+            <code>{feature.code}</code>
           </pre>
         </motion.div>
 
         <div className="grid gap-6">
-          {codeSamples.slice(1).map((sample, index) => (
+          {rest.map((sample, index) => (
             <motion.article
               key={sample.title}
               initial={{ opacity: 0, y: 24 }}

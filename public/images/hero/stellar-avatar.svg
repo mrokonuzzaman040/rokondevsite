@@ -1,0 +1,31 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="avatarGlow" cx="0.5" cy="0.4" r="0.65">
+      <stop offset="0" stop-color="#D8B4FE" stop-opacity="0.95" />
+      <stop offset="0.45" stop-color="#A855F7" stop-opacity="0.8" />
+      <stop offset="1" stop-color="#1E1038" stop-opacity="0.05" />
+    </radialGradient>
+    <linearGradient id="avatarCore" x1="72" y1="60" x2="248" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6" />
+      <stop offset="0.52" stop-color="#7C3AED" />
+      <stop offset="1" stop-color="#5B21B6" />
+    </linearGradient>
+    <linearGradient id="orbit" x1="40" y1="160" x2="280" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0ABFC" stop-opacity="0.0" />
+      <stop offset="0.35" stop-color="#C084FC" stop-opacity="0.6" />
+      <stop offset="0.65" stop-color="#7C3AED" stop-opacity="0.6" />
+      <stop offset="1" stop-color="#312E81" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="160" fill="url(#avatarGlow)" />
+  <circle cx="160" cy="160" r="108" fill="url(#avatarCore)" opacity="0.9" />
+  <ellipse cx="160" cy="160" rx="118" ry="52" fill="url(#orbit)" opacity="0.75" />
+  <circle cx="118" cy="146" r="22" fill="#C4B5FD" opacity="0.85" />
+  <circle cx="204" cy="184" r="18" fill="#E879F9" opacity="0.8" />
+  <path d="M112 214C130 238 190 238 208 214" stroke="#F0ABFC" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <path d="M126 126C138 108 182 108 194 126" stroke="#F5D0FE" stroke-width="10" stroke-linecap="round" opacity="0.7" />
+  <circle cx="160" cy="160" r="42" fill="#0F0A1F" opacity="0.65" />
+  <circle cx="146" cy="152" r="10" fill="#FDE68A" />
+  <circle cx="176" cy="152" r="10" fill="#FDE68A" />
+  <path d="M142 190C150 200 170 200 178 190" stroke="#F9A8D4" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+</svg>

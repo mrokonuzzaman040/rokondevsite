@@ -1,11 +1,14 @@
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
+import { getProjects } from "@/lib/get-portfolio-data";
 
 export const metadata = {
   title: "Projects",
   description: "Case studies and product stories that blend animation systems with platform engineering.",
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
   return (
     <div>
       <header className="max-w-3xl">
@@ -16,7 +19,7 @@ export default function ProjectsPage() {
           measurable outcomes are always the goal.
         </p>
       </header>
-      <ProjectGallery />
+      <ProjectGallery projects={projects} />
     </div>
   );
 }

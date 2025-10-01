@@ -1,0 +1,255 @@
+{
+  "hero": {
+    "availability": "Available for immersive platform work in 2025",
+    "intro": "Rokon is a software engineer crafting",
+    "highlight": "cinematic product experiences",
+    "tagline": "where code feels alive, performant, and intentional.",
+    "description": "I design and ship ambitious interfaces, build developer platforms, and orchestrate animation systems that make complex tools approachable. Mixing systems thinking with craft-level motion design is where my work lives.",
+    "stats": [
+      "10+ years shipping products",
+      "Animation systems and developer experience",
+      "Design-driven engineering"
+    ],
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Motion Design",
+      "Edge Compute",
+      "Developer Experience",
+      "Design Systems"
+    ],
+    "primaryCta": {
+      "label": "View selected projects",
+      "href": "/projects"
+    },
+    "secondaryCta": {
+      "label": "Explore experience",
+      "href": "/experience"
+    },
+    "visual": {
+      "src": "/images/hero/stellar-avatar.svg",
+      "alt": "Stylized portrait illustration with purple gradients"
+    }
+  },
+  "projects": [
+    {
+      "title": "Nebula Dev Platform",
+      "summary": "Full-stack developer portal that orchestrates onboarding, documentation, and self-service environments for engineering teams.",
+      "description": "I designed and led the build of a control plane for platform teams. The system provisions ephemeral environments, syncs with service catalogs, and exposes a plug-in SDK that scaled adoption across 14 product squads.",
+      "year": 2024,
+      "technologies": [
+        "Next.js",
+        "tRPC",
+        "PostgreSQL",
+        "AWS",
+        "Terraform"
+      ],
+      "liveUrl": "https://example.com/nebula",
+      "repoUrl": "https://github.com/example/nebula",
+      "image": {
+        "src": "/images/projects/nebula-orbit.svg",
+        "alt": "Orbit of service tiles for the Nebula developer platform"
+      },
+      "focus": "Narrative onboarding, velocity tooling, and user trust through realtime feedback.",
+      "role": "Product strategy, design systems, core architecture, and motion guidelines.",
+      "outcomes": [
+        "3x faster onboarding for new product squads",
+        "92% adoption of animation system across surfaces",
+        "Performance budget enforced by design tokens"
+      ]
+    },
+    {
+      "title": "Spectral Analytics",
+      "summary": "Data storytelling suite used by product analytics teams to compose real-time dashboards and narrative reports.",
+      "description": "Built a rich-client experience with collaborative stories, live queries, and animated transitions across 3D charts. Attention was spent on framing data in human language with inline insights.",
+      "year": 2023,
+      "technologies": [
+        "React",
+        "WebGL",
+        "Framer Motion",
+        "ClickHouse",
+        "GraphQL"
+      ],
+      "liveUrl": "https://example.com/spectral",
+      "image": {
+        "src": "/images/projects/spectral-grid.svg",
+        "alt": "Spectral analytics dashboard visual with neon gradients"
+      },
+      "focus": "Realtime storyboards, collaborative annotations, and immersive data narratives.",
+      "role": "Experience lead, animation systems, collaborative runtime, and governance.",
+      "outcomes": [
+        "Multi-tenant charts rendered in under 80ms",
+        "Live rooms adopted by 6 product pods",
+        "Narrative exports increased weekly engagement 44%"
+      ]
+    },
+    {
+      "title": "Operator Workbench",
+      "summary": "Mission control for customer success engineers featuring real-time observability, workflow automation, and AI assisted runbooks.",
+      "description": "Architected the frontend platform, created a design system, and shipped a workflow composer with an expressive DSL that drives AI suggestions.",
+      "year": 2022,
+      "technologies": [
+        "Next.js",
+        "State Machines",
+        "Tailwind CSS",
+        "OpenAI",
+        "Redis Streams"
+      ],
+      "repoUrl": "https://github.com/example/operator-workbench",
+      "image": {
+        "src": "/images/projects/operator-console.svg",
+        "alt": "Operator console with orchestrated workflows"
+      },
+      "focus": "Service quality dashboards, incident assist, and multiplayer runbooks.",
+      "role": "Architecture, design system stewardship, and automation pipelines.",
+      "outcomes": [
+        "Reduced time to resolution by 48%",
+        "Unified runbook library across 5 regions",
+        "Motion guidelines codified into component kit"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Vertex Labs",
+      "role": "Senior Software Engineer",
+      "start": "Jul 2022",
+      "end": "Present",
+      "achievements": [
+        "Led platform initiative that cut onboarding time for new services from days to minutes.",
+        "Prototyped an event-driven rendering pipeline that now powers 60% of customer dashboards.",
+        "Mentored six engineers across frontend and infrastructure tracks with growth plans and pairing rituals."
+      ],
+      "technologies": [
+        "Next.js",
+        "Go",
+        "AWS",
+        "Temporal",
+        "Terraform"
+      ]
+    },
+    {
+      "company": "Chromatic Systems",
+      "role": "Full-Stack Engineer",
+      "start": "Mar 2019",
+      "end": "Jun 2022",
+      "achievements": [
+        "Shipped collaboration suite adopted by 40k daily active creatives.",
+        "Introduced code health guardrails and continuous delivery practices for 14 services.",
+        "Led migration from monolith to federated graph with observable instrumentation."
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "GraphQL",
+        "PostgreSQL",
+        "Kubernetes"
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "Product Engineer",
+      "start": "2015",
+      "end": "2019",
+      "achievements": [
+        "Consulted early-stage founders; shipped prototypes and MVPs in under eight weeks.",
+        "Built design systems and front-of-site experiences with motion-first storytelling."
+      ],
+      "technologies": [
+        "Next.js",
+        "Vue",
+        "Svelte",
+        "Firebase"
+      ]
+    }
+  ],
+  "codeSamples": [
+    {
+      "title": "Composable Animation Harness",
+      "description": "Utility hook that choreographs staggered entrance animations and orchestrations across sections.",
+      "code": "import { useEffect } from \"react\";\nimport { animate, stagger } from \"framer-motion\";\n\ntype StaggerOptions = {\n  selector: string;\n  duration?: number;\n  delay?: number;\n};\n\nexport function useStagger({ selector, duration = 0.6, delay = 0.08 }: StaggerOptions) {\n  useEffect(() => {\n    const elements = document.querySelectorAll(selector);\n    return animate(\n      elements,\n      { opacity: [0, 1], y: [24, 0] },\n      { duration, delay: stagger(delay) }\n    );\n  }, [selector, duration, delay]);\n}\n",
+      "language": "ts"
+    },
+    {
+      "title": "Edge Deployer",
+      "description": "Deploy workflow that streams build telemetry and ensures traffic is warmed before flipping routes.",
+      "code": "type Region = \"iad\" | \"dub\" | \"sfo\";\n\ntype Deployment = {\n  id: string;\n  regions: Region[];\n  onProgress: (message: string) => void;\n};\n\nexport async function deployEdge({ id, regions, onProgress }: Deployment) {\n  onProgress('[launch] starting ' + id);\n\n  for (const region of regions) {\n    onProgress('[package] shipping to ' + region);\n    await warmRegion(region);\n    onProgress('[ready] warmed ' + region);\n  }\n\n  onProgress('[live] flipped traffic for ' + id);\n}\n\nasync function warmRegion(region: Region) {\n  await new Promise((resolve) => setTimeout(resolve, 400));\n}\n",
+      "language": "ts"
+    },
+    {
+      "title": "Metric Lens",
+      "description": "Server action that blends business metrics with qualitative signals for weekly planning rituals.",
+      "code": "import \"server-only\";\nimport { cache } from \"react\";\nimport { db } from \"@/lib/db\";\n\nexport const fetchMetricLens = cache(async (teamId: string) => {\n  const metrics = await db.metric.findMany({\n    where: { teamId },\n    orderBy: { capturedAt: \"desc\" },\n    take: 12,\n  });\n\n  return metrics.map((metric) => ({\n    ...metric,\n    sentiment: metric.trend > 0 ? \"upbeat\" : \"regroup\",\n  }));\n});\n",
+      "language": "ts"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Motion with purpose",
+      "description": "Design transitions that teach the interface. Every animation frames context, reveals system status, or rewards progressive discovery."
+    },
+    {
+      "title": "Platforms over projects",
+      "description": "Solve classes of problems with tooling that scales. Invest in primitives, design tokens, and automation that future teams can reuse."
+    },
+    {
+      "title": "Earned simplicity",
+      "description": "Contain complexity behind intuitive affordances. Lean on ergonomics, strong defaults, and guided workflows to keep teams focused on outcomes."
+    }
+  ],
+  "focusAreas": [
+    {
+      "title": "Animation harnesses",
+      "detail": "Composable primitives and orchestrations that let teams move from static mockups to expressive motion in minutes."
+    },
+    {
+      "title": "Edge-first delivery",
+      "detail": "Server actions, cache directives, and deploy workflows that keep experiences instant while surfacing useful telemetry."
+    },
+    {
+      "title": "DX Automations",
+      "detail": "Tooling that codifies quality gates, scaffolds best practices, and keeps squads aligned without slowing them down."
+    }
+  ],
+  "contacts": [
+    {
+      "title": "Book a collaboration call",
+      "detail": "Perfect for product teams looking to craft immersive platform experiences.",
+      "href": "https://cal.com/rokon/intro",
+      "cta": "Schedule 30 minutes"
+    },
+    {
+      "title": "Say hello",
+      "detail": "Share context, requirements, or just an idea. I respond within a day.",
+      "href": "mailto:hello@rokon.dev",
+      "cta": "Compose email"
+    },
+    {
+      "title": "Follow the build log",
+      "detail": "Snapshots of prototypes, motion explorations, and platform experiments.",
+      "href": "https://twitter.com/rokondev",
+      "cta": "Open build log"
+    }
+  ],
+  "contactPage": {
+    "title": "Contact",
+    "headline": "Let's engineer experiences that feel otherworldly.",
+    "description": "Open to partnering with product teams, founders, and studios that value motion-rich storytelling, durability, and developer happiness.",
+    "collaborationKit": [
+      "Technical discovery workshop to uncover opportunities, constraints, and audience needs.",
+      "Motion-first prototyping that aligns design, product, and engineering before writing production code.",
+      "Engineering enablement through design systems, guild rituals, and pairing sessions."
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Rokon synthesizes ambiguity into motion-first prototypes that inevitably become the blueprint our squads follow. The combination of deep technical empathy and narrative storytelling keeps everyone aligned.",
+      "role": "Principal Designer",
+      "company": "Vertex Labs"
+    }
+  ],
+  "whatsapp": {
+    "number": "8801763166516",
+    "message": "Hey Rokon, let's collaborate on a new experience!"
+  }
+}

@@ -1,29 +1,14 @@
 import { CodeNotebook } from "@/components/code/CodeNotebook";
-
-const focusAreas = [
-  {
-    title: "Animation harnesses",
-    detail:
-      "Composable primitives and orchestrations that let teams move from static mockups to expressive motion in minutes.",
-  },
-  {
-    title: "Edge-first delivery",
-    detail:
-      "Server actions, cache directives, and deploy workflows that keep experiences instant while surfacing useful telemetry.",
-  },
-  {
-    title: "DX Automations",
-    detail:
-      "Tooling that codifies quality gates, scaffolds best practices, and keeps squads aligned without slowing them down.",
-  },
-];
+import { getPortfolioData } from "@/lib/get-portfolio-data";
 
 export const metadata = {
   title: "Code Lab",
   description: "Animation utilities, deployment workflows, and platform tooling experiments.",
 };
 
-export default function CodePage() {
+export default async function CodePage() {
+  const { focusAreas, codeSamples } = await getPortfolioData();
+
   return (
     <div>
       <header className="max-w-3xl">
@@ -49,7 +34,7 @@ export default function CodePage() {
         ))}
       </div>
 
-      <CodeNotebook />
+      <CodeNotebook codeSamples={codeSamples} />
     </div>
   );
 }

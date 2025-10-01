@@ -2,11 +2,19 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { codeSamples } from "@/lib/portfolio-data";
+import type { CodeSample } from "@/lib/types";
 
-export function CodeNotebook() {
+type CodeNotebookProps = {
+  codeSamples: CodeSample[];
+};
+
+export function CodeNotebook({ codeSamples }: CodeNotebookProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSample = codeSamples[activeIndex];
+
+  if (!activeSample) {
+    return null;
+  }
 
   return (
     <div className="mt-12 grid gap-10 lg:grid-cols-[280px_1fr]">
@@ -40,7 +48,7 @@ export function CodeNotebook() {
       <div className="relative overflow-hidden rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-background)/.7] p-8">
         <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-muted">
           <span>{activeSample.language}</span>
-          <span>Motion & DX lab</span>
+          <span>Motion and DX lab</span>
         </div>
         <h2 className="mt-4 text-2xl font-semibold text-white">{activeSample.title}</h2>
         <p className="mt-3 text-sm text-muted">{activeSample.description}</p>
@@ -62,7 +70,7 @@ export function CodeNotebook() {
           </div>
 
           <div className="rounded-2xl border border-[color:var(--color-border)]/60 bg-black/40 p-5 text-xs text-muted">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted">Implementation Notes</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted">Implementation notes</p>
             <ul className="mt-3 space-y-2">
               <li>- Designed for reuse across product surfaces.</li>
               <li>- Strong defaults with typed extension hooks.</li>

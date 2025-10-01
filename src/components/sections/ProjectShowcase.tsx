@@ -1,8 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { projects } from "@/lib/portfolio-data";
+import type { Project } from "@/lib/types";
+
+type ProjectShowcaseProps = {
+  projects: Project[];
+};
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,7 +22,7 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-export function ProjectShowcase() {
+export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   return (
     <section className="mt-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
@@ -43,52 +48,59 @@ export function ProjectShowcase() {
         variants={container}
         className="mt-12 grid gap-6 md:grid-cols-3"
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.article
             key={project.title}
             variants={item}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)]/80 bg-[color:var(--color-background)/.65] p-6"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[color:var(--color-border)]/80 bg-[color:var(--color-background)/.65]"
           >
-            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-transparent via-[color:var(--color-accent)/.08] to-transparent" />
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="rounded-full border border-[color:var(--color-border)] px-3 py-1 text-xs uppercase tracking-[0.3em] text-muted">
-                {project.year}
-              </span>
-              <div className="flex items-center gap-2 text-xs text-muted">
-                {project.technologies.slice(0, 2).map((tech) => (
-                  <span key={tech} className="rounded-full bg-[color:var(--color-accent)/.14] px-2 py-1">
-                    {tech}
-                  </span>
-                ))}
+            <div className="relative h-48 overflow-hidden">
+              <Image
+                src={project.image.src}
+                alt={project.image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority={index === 0}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,6,26,0.8)]" />
+              <div className="absolute top-4 left-4 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
+                <span className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-background)/.7] px-3 py-1">
+                  {project.year}
+                </span>
+                <span className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-background)/.6] px-3 py-1">
+                  {project.technologies.slice(0, 2).join(" | ")}
+                </span>
               </div>
             </div>
-            <h3 className="mt-6 text-2xl font-semibold text-white">{project.title}</h3>
-            <p className="mt-3 text-sm text-muted">{project.summary}</p>
-            <p className="mt-4 text-xs text-muted/70">{project.description}</p>
 
-            <div className="mt-auto flex items-center gap-4 pt-6 text-sm font-semibold text-muted">
-              {project.liveUrl && (
-                <Link
-                  href={project.liveUrl}
-                  className="relative inline-flex items-center gap-2 transition-colors hover:text-white"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Visit product {"->"}
-                </Link>
-              )}
-              {project.repoUrl && (
-                <Link
-                  href={project.repoUrl}
-                  className="relative inline-flex items-center gap-2 transition-colors hover:text-white"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Repository ^
-                </Link>
-              )}
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+              <p className="mt-3 text-sm text-muted">{project.summary}</p>
+              <p className="mt-4 text-xs text-muted/70">{project.description}</p>
+
+              <div className="mt-auto flex items-center gap-4 pt-6 text-sm font-semibold text-muted">
+                {project.liveUrl && (
+                  <Link
+                    href={project.liveUrl}
+                    className="relative inline-flex items-center gap-2 transition-colors hover:text-white"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visit product {"->"}
+                  </Link>
+                )}
+                {project.repoUrl && (
+                  <Link
+                    href={project.repoUrl}
+                    className="relative inline-flex items-center gap-2 transition-colors hover:text-white"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Repository ^
+                  </Link>
+                )}
+              </div>
             </div>
           </motion.article>
         ))}

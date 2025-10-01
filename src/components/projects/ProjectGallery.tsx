@@ -1,10 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { projects } from "@/lib/portfolio-data";
+import type { Project } from "@/lib/types";
 
-export function ProjectGallery() {
+type ProjectGalleryProps = {
+  projects: Project[];
+};
+
+export function ProjectGallery({ projects }: ProjectGalleryProps) {
   return (
     <div className="mt-12 space-y-10">
       {projects.map((project, idx) => (
@@ -14,12 +19,25 @@ export function ProjectGallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: idx * 0.08, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-background)/.7] p-8"
+          className="relative overflow-hidden rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-background)/.7]"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-[color:var(--color-accent)/.12] via-transparent to-transparent opacity-0 transition-opacity duration-700 hover:opacity-100" />
           <div className="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-            <div>
-              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-muted">
+            <div className="p-8">
+              <div className="relative overflow-hidden rounded-2xl border border-[color:var(--color-border)]/80 bg-[color:var(--color-background)/.6]">
+                <div className="relative h-64">
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-cover"
+                    priority={idx === 0}
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-muted">
                 <span className="rounded-full border border-[color:var(--color-border)] px-3 py-1">{project.year}</span>
                 <span>{project.technologies.join("  |  ")}</span>
               </div>
@@ -62,27 +80,23 @@ export function ProjectGallery() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-background)/.9] p-6">
-              <div className="flex h-full flex-col justify-between gap-4">
-                <div className="space-y-3 text-sm text-muted">
-                  <p>
-                    <strong className="text-white">Project focus.</strong> Narrative onboarding, velocity tooling, and
-                    user trust through realtime feedback.
-                  </p>
-                  <p>
-                    <strong className="text-white">Role.</strong> Product strategy, design systems, core architecture,
-                    and motion guidelines.
-                  </p>
-                </div>
+            <div className="relative flex flex-col justify-between gap-6 rounded-l-3xl bg-[color:var(--color-background)/.85] p-8">
+              <div className="space-y-3 text-sm text-muted">
+                <p>
+                  <strong className="text-white">Project focus.</strong> {project.focus}
+                </p>
+                <p>
+                  <strong className="text-white">Role.</strong> {project.role}
+                </p>
+              </div>
 
-                <div className="rounded-xl border border-[color:var(--color-border)]/60 bg-black/40 p-4">
-                  <p className="text-xs uppercase tracking-[0.3em] text-muted">Outcome snapshots</p>
-                  <ul className="mt-3 space-y-2 text-xs text-muted">
-                    <li>- 3x faster onboarding for new product squads</li>
-                    <li>- 92% adoption of animation system across surfaces</li>
-                    <li>- Performance budget enforced by design tokens</li>
-                  </ul>
-                </div>
+              <div className="rounded-xl border border-[color:var(--color-border)]/60 bg-black/40 p-4">
+                <p className="text-xs uppercase tracking-[0.3em] text-muted">Outcome snapshots</p>
+                <ul className="mt-3 space-y-2 text-xs text-muted">
+                  {project.outcomes.map((item) => (
+                    <li key={item}>- {item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

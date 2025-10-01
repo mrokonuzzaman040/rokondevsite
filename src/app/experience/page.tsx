@@ -1,29 +1,15 @@
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
-
-const principles = [
-  {
-    title: "Motion with purpose",
-    description:
-      "Design transitions that teach the interface. Every animation frames context, reveals system status, or rewards progressive discovery.",
-  },
-  {
-    title: "Platforms over projects",
-    description:
-      "Solve classes of problems with tooling that scales. Invest in primitives, design tokens, and automation that future teams can reuse.",
-  },
-  {
-    title: "Earned simplicity",
-    description:
-      "Contain complexity behind intuitive affordances. Lean on ergonomics, strong defaults, and guided workflows to keep teams focused on outcomes.",
-  },
-];
+import { getPortfolioData } from "@/lib/get-portfolio-data";
 
 export const metadata = {
   title: "Experience",
   description: "Career timeline, values, and the principles guiding immersive engineering work.",
 };
 
-export default function ExperiencePage() {
+export default async function ExperiencePage() {
+  const { experiences, principles, testimonials } = await getPortfolioData();
+  const testimonial = testimonials[0];
+
   return (
     <div>
       <header className="max-w-3xl">
@@ -49,16 +35,17 @@ export default function ExperiencePage() {
         ))}
       </div>
 
-      <ExperienceTimeline />
+      <ExperienceTimeline experiences={experiences} />
 
-      <section className="mt-24 overflow-hidden rounded-3xl border border-[color:var(--color-accent)/.2] bg-[color:var(--color-background)/.6] p-10">
-        <h2 className="text-3xl font-semibold text-white">What teammates say</h2>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          &quot;Rokon synthesizes ambiguity into motion-first prototypes that inevitably become the blueprint our squads
-          follow. The combination of deep technical empathy and narrative storytelling keeps everyone aligned.&quot;
-        </p>
-        <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted">Principal Designer | Vertex Labs</p>
-      </section>
+      {testimonial && (
+        <section className="mt-24 overflow-hidden rounded-3xl border border-[color:var(--color-accent)/.2] bg-[color:var(--color-background)/.6] p-10">
+          <h2 className="text-3xl font-semibold text-white">What teammates say</h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted">&quot;{testimonial.quote}&quot;</p>
+          <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted">
+            {testimonial.role} | {testimonial.company}
+          </p>
+        </section>
+      )}
     </div>
   );
 }
