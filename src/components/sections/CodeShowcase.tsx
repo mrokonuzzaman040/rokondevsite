@@ -19,7 +19,7 @@ export function CodeShowcase() {
           href="/code"
           className="inline-flex items-center rounded-full border border-[color:var(--color-border)] px-4 py-2 text-sm font-semibold text-muted transition-colors hover:border-[color:var(--color-accent)/.4] hover:text-white"
         >
-          View the lab →
+          View the lab ->
         </Link>
       </div>
 

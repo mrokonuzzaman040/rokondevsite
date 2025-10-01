@@ -49,7 +49,7 @@ export function Navbar() {
           className="group relative inline-flex items-center gap-2 rounded-full border border-[color:var(--color-accent)/.5] bg-[color:var(--color-accent)/.12] px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-[1.03]"
         >
           <span className="absolute inset-0 -z-10 rounded-full bg-[color:var(--color-accent)/.2] blur-md opacity-0 transition-opacity group-hover:opacity-100" />
-          Let’s Collaborate
+          Let's Collaborate
         </Link>
       </nav>
     </header>

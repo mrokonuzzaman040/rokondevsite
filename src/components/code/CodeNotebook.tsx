@@ -64,9 +64,9 @@ export function CodeNotebook() {
           <div className="rounded-2xl border border-[color:var(--color-border)]/60 bg-black/40 p-5 text-xs text-muted">
             <p className="text-xs uppercase tracking-[0.3em] text-muted">Implementation Notes</p>
             <ul className="mt-3 space-y-2">
-              <li>• Designed for reuse across product surfaces.</li>
-              <li>• Strong defaults with typed extension hooks.</li>
-              <li>• Aligned with accessibility and performance budgets.</li>
+              <li>- Designed for reuse across product surfaces.</li>
+              <li>- Strong defaults with typed extension hooks.</li>
+              <li>- Aligned with accessibility and performance budgets.</li>
             </ul>
             {activeSample.repoUrl && (
               <a
@@ -75,7 +75,7 @@ export function CodeNotebook() {
                 target="_blank"
                 rel="noreferrer"
               >
-                View repository ↗
+                View repository ^
               </a>
             )}
           </div>

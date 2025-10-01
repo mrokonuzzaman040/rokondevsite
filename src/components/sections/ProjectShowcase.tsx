@@ -32,7 +32,7 @@ export function ProjectShowcase() {
           href="/projects"
           className="inline-flex items-center rounded-full border border-[color:var(--color-accent)/.4] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--color-accent)/.12]"
         >
-          View project index →
+          View project index ->
         </Link>
       </div>
 
@@ -76,7 +76,7 @@ export function ProjectShowcase() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Visit product →
+                  Visit product ->
                 </Link>
               )}
               {project.repoUrl && (
@@ -86,7 +86,7 @@ export function ProjectShowcase() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Repository ↗
+                  Repository ^
                 </Link>
               )}
             </div>

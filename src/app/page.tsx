@@ -16,10 +16,10 @@ export default function Home() {
         <div className="absolute -left-10 top-0 h-32 w-32 rounded-full bg-[color:var(--color-accent)/.2] blur-3xl" />
         <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-[color:var(--color-accent-soft)/.3] blur-3xl" />
         <div className="relative">
-          <h2 className="text-3xl font-semibold text-white">Let’s craft the future of your product.</h2>
+          <h2 className="text-3xl font-semibold text-white">Let's craft the future of your product.</h2>
           <p className="mt-3 max-w-2xl text-sm text-muted">
             I collaborate with teams to ship platforms, design systems, and cinematic experiences that feel effortless.
-            If you’re building something that deserves a new dimension, let’s chat.
+            If you're building something that deserves a new dimension, let's chat.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link
@@ -32,7 +32,7 @@ export default function Home() {
               href="/projects"
               className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] px-5 py-3 text-sm font-semibold text-muted transition-colors hover:border-[color:var(--color-accent)/.4] hover:text-white"
             >
-              Browse case studies →
+              Browse case studies ->
             </Link>
           </div>
         </div>

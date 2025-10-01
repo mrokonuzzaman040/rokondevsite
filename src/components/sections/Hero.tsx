@@ -78,7 +78,7 @@ export function Hero() {
           href="/experience"
           className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] px-6 py-3 text-sm font-semibold text-muted transition-colors duration-300 hover:border-[color:var(--color-accent)/.4] hover:text-white"
         >
-          Explore experience →
+          Explore experience ->
         </Link>
       </motion.div>
 

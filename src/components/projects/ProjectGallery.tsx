@@ -21,7 +21,7 @@ export function ProjectGallery() {
             <div>
               <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-muted">
                 <span className="rounded-full border border-[color:var(--color-border)] px-3 py-1">{project.year}</span>
-                <span>{project.technologies.join(" ∙ ")}</span>
+                <span>{project.technologies.join("  |  ")}</span>
               </div>
               <h2 className="mt-6 text-3xl font-semibold text-white">{project.title}</h2>
               <p className="mt-4 text-sm text-muted">{project.summary}</p>
@@ -46,7 +46,7 @@ export function ProjectGallery() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Live experience →
+                    Live experience ->
                   </Link>
                 )}
                 {project.repoUrl && (
@@ -56,7 +56,7 @@ export function ProjectGallery() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Source ↗
+                    Source ^
                   </Link>
                 )}
               </div>
@@ -78,9 +78,9 @@ export function ProjectGallery() {
                 <div className="rounded-xl border border-[color:var(--color-border)]/60 bg-black/40 p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted">Outcome snapshots</p>
                   <ul className="mt-3 space-y-2 text-xs text-muted">
-                    <li>• 3x faster onboarding for new product squads</li>
-                    <li>• 92% adoption of animation system across surfaces</li>
-                    <li>• Performance budget enforced by design tokens</li>
+                    <li>- 3x faster onboarding for new product squads</li>
+                    <li>- 92% adoption of animation system across surfaces</li>
+                    <li>- Performance budget enforced by design tokens</li>
                   </ul>
                 </div>
               </div>

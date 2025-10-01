@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rokon – Software Engineer Portfolio",
+    default: "Rokon - Software Engineer Portfolio",
     template: "%s · Rokon",
   },
   description:
@@ -25,12 +25,11 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Rokon – Software Engineer Portfolio",
+    title: "Rokon - Software Engineer Portfolio",
     description:
       "Explore projects, engineering experiments, and case studies from Rokon, a software engineer focused on immersive web products.",
     url: "https://rokon.dev",
     siteName: "Rokon",
-    images: [{ url: "/og.png" }],
     type: "website",
   },
 };

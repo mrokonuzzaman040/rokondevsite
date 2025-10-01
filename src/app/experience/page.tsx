@@ -54,8 +54,8 @@ export default function ExperiencePage() {
       <section className="mt-24 overflow-hidden rounded-3xl border border-[color:var(--color-accent)/.2] bg-[color:var(--color-background)/.6] p-10">
         <h2 className="text-3xl font-semibold text-white">What teammates say</h2>
         <p className="mt-3 max-w-2xl text-sm text-muted">
-          “Rokon synthesizes ambiguity into motion-first prototypes that inevitably become the blueprint our squads
-          follow. The combination of deep technical empathy and narrative storytelling keeps everyone aligned.”
+          "Rokon synthesizes ambiguity into motion-first prototypes that inevitably become the blueprint our squads
+          follow. The combination of deep technical empathy and narrative storytelling keeps everyone aligned."
         </p>
         <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted">Principal Designer · Vertex Labs</p>
       </section>
