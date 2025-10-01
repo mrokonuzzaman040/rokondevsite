@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --surface-0: 10 6 26;
+  --surface-1: 20 10 46;
+  --surface-2: 48 25 97;
+  --surface-3: 80 32 128;
+  --accent: 168 85 247;
+  --accent-soft: 122 67 255;
+  --text-primary: 237 231 255;
+  --text-muted: 177 161 219;
+  --border-subtle: 71 46 128;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(var(--surface-2) / 0.4), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(var(--surface-3) / 0.55), transparent 50%),
+    linear-gradient(135deg, rgba(var(--surface-0) / 1), rgba(var(--surface-1) / 1));
+  color: rgb(var(--text-primary));
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.015em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(var(--accent) / 0.25);
+  color: rgb(var(--text-primary));
+}
+
+@theme inline {
+  --color-background: rgb(var(--surface-0));
+  --color-surface: rgb(var(--surface-1));
+  --color-surface-muted: rgb(var(--surface-2));
+  --color-border: rgba(var(--border-subtle) / 0.65);
+  --color-accent: rgb(var(--accent));
+  --color-accent-soft: rgb(var(--accent-soft));
+  --color-muted: rgba(var(--text-muted) / 1);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --shadow-glow: 0 0 40px rgba(var(--accent) / 0.35);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+}
