@@ -33,7 +33,7 @@ export default function ExperiencePage() {
         </h1>
         <p className="mt-4 text-sm text-muted">
           I move fluidly between product strategy, frontend architecture, and platform enablement. The goal is always to
-          unlock teams-making complex flows feel effortless without compromising on rigor.
+          unlock teams, making complex flows feel effortless without compromising on rigor.
         </p>
       </header>
 
